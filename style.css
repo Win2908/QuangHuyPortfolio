@@ -49,7 +49,7 @@ body{
 .gap{ gap: 12px; }
 
 .logo{
-  width: 40px;
+  width: 100px;
   height: 40px;
   border-radius: 12px;
   display: grid;
@@ -218,4 +218,33 @@ input:focus, textarea:focus{
   .hero{ grid-template-columns: 1fr; }
   .grid{ grid-template-columns: 1fr; }
   .nav{ display: none; }
+}
+
+.heroImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.sectionHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.project-image{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 8px 0;
 }
