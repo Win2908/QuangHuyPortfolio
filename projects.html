@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tất cả dự án | Quang Huy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/QH_Tools.ico" type="image/x-icon">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container row">
+      <div class="logo">QuangHuy</div>
+
+      <nav class="nav">
+        <a href="index.html#about">Giới thiệu</a>
+        <a href="projects.html">Dự án</a>
+        <a href="index.html#contact">Liên hệ</a>
+      </nav>
+
+      <a class="btn" href="index.html">← Về trang chủ</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>Tất cả dự án</h1>
+      <p class="sub">Danh sách đầy đủ các dự án mình đã làm / đang làm.</p>
+
+      <div class="grid">
+        <article class="project">
+          <h3>QH Tools (Excel Add-in)</h3>
+          <p>Mô tả dự án…</p>
+          <div class="row gap">
+            <a class="link" href="#" target="_blank" rel="noreferrer">Demo</a>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <h3>Portfolio Website</h3>
+          <p>Mô tả dự án…</p>
+          <div class="row gap">
+            <a class="link" href="index.html">Demo</a>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+
+        <!-- Copy thêm project ở đây -->
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> Quang Huy
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
