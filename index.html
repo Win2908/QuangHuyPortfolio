@@ -1,25 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website đầu tiên của mình</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quang Huy | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="card">
-    <h1>Xin chào 👋</h1>
-    <p>Đây là website đầu tiên của mình chạy bằng HTML + CSS.</p>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="container row">
+      <div class="logo">QH</div>
 
-    <button id="btn">Bấm thử</button>
-    <p id="msg" class="muted"></p>
-  </div>
+      <nav class="nav">
+        <a href="#about">Giới thiệu</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <button class="btn" id="themeBtn" type="button">Đổi nền</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="tag">Xin chào 👋</p>
+        <h1>Mình là <span class="accent">Quang Huy</span></h1>
+        <p class="sub">
+          Đây là website portfolio đầu tiên của mình. Mình đang học web từ số 0 và sẽ cập nhật dần.
+        </p>
+
+        <div class="heroActions">
+          <a class="btn primary" href="#projects">Xem dự án</a>
+          <a class="btn ghost" href="#contact">Liên hệ</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Thông tin nhanh</h3>
+        <ul class="list">
+          <li>📍 Việt Nam</li>
+          <li>🧰 Quan tâm: Excel Add-in, VB.NET, Web</li>
+          <li>🎯 Mục tiêu: Làm portfolio xịn</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>Giới thiệu</h2>
+      <p>
+        Mình đang học HTML/CSS/JS. Trang này được host bằng GitHub Pages.
+        Mỗi lần mình sửa code và commit, website sẽ tự cập nhật.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>Dự án</h2>
+
+      <div class="grid">
+        <article class="project">
+          <h3>Project 1</h3>
+          <p>Mô tả ngắn về dự án của bạn.</p>
+          <div class="row gap">
+            <a class="link" href="#" target="_blank" rel="noreferrer">Demo</a>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <h3>Project 2</h3>
+          <p>Mô tả ngắn về dự án của bạn.</p>
+          <div class="row gap">
+            <a class="link" href="#" target="_blank" rel="noreferrer">Demo</a>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <h3>Project 3</h3>
+          <p>Mô tả ngắn về dự án của bạn.</p>
+          <div class="row gap">
+            <a class="link" href="#" target="_blank" rel="noreferrer">Demo</a>
+            <a class="link" href="#" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Liên hệ</h2>
+      <p>Bạn có thể để email/FB/LinkedIn ở đây:</p>
+
+      <div class="card">
+        <form id="contactForm" class="form">
+          <label>
+            Tên
+            <input name="name" placeholder="Nhập tên..." required />
+          </label>
+
+          <label>
+            Email
+            <input name="email" type="email" placeholder="abc@gmail.com" required />
+          </label>
+
+          <label>
+            Lời nhắn
+            <textarea name="message" rows="4" placeholder="Nhắn gì đó..." required></textarea>
+          </label>
+
+          <button class="btn primary" type="submit">Gửi</button>
+          <p id="formMsg" class="muted"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> Quang Huy
+    </footer>
+  </main>
 
   <script>
-    const btn = document.getElementById("btn");
-    const msg = document.getElementById("msg");
-    btn.addEventListener("click", () => {
-      msg.textContent = "Bạn vừa bấm nút 🎉";
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Theme toggle (đổi nền)
+    const themeBtn = document.getElementById("themeBtn");
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+
+    // Fake submit (demo)
+    const form = document.getElementById("contactForm");
+    const formMsg = document.getElementById("formMsg");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      formMsg.textContent = "Đã nhận thông tin! (Demo thôi nha)";
+      form.reset();
     });
   </script>
 </body>
